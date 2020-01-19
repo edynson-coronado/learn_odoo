@@ -6,3 +6,9 @@
 
 # Learn Odoo
 Course odoo by Edynson Coronado Icochea
+
+* Buenas prácticas
+* Cambios
+* Novedades
+
+## Buenas prácticas
