@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <template id="rental_apartment.report_homeaparment_document">
+                <t t-call="web.external_layout">
+                    <div class="header">
+                        My empresa / Logo
+                    </div>
+                    <div class="page">
+                        <h2>Reporte de departamento:</h2>
+                        <strong><p t-field="doc.name"/>: <span t-field="doc.reference"/></strong>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div>
+                                    <strong>Calle:</strong>
+                                    <span t-field="doc.street"/>
+                                </div>
+                                <div>
+                                    <strong>Distrito:</strong>
+                                    <span t-field="doc.l10n_pe_district.name"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <strong>Fecha:</strong>
+                                    <span t-field="doc.date"/>
+                                </div>
+                                <div>
+                                    <strong>Diario:</strong>
+                                    <span t-field="doc.journal_id.name"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        Footer
+                    </div>
+                </t>
+        </template>
+
+        <template id="report_home_apartment">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="rental_apartment.report_homeaparment_document"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

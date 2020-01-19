@@ -1,0 +1,182 @@
+<odoo>
+  <data>
+
+    <!-- VIEWS -->
+
+    <!-- home.apartment -->
+    <record model="ir.ui.view" id="view_home_apartment_tree">
+      <field name="name">home.apartment.tree</field>
+      <field name="model">home.apartment</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="type" optional="show"/>
+          <field name="count_service"/>
+          <field name="state" optional="hidden"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_home_apartment_form">
+      <field name="name">home.apartment.form</field>
+      <field name="model">home.apartment</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="action_post"
+              string="Post"
+              class="oe_highlight"
+              type="object"
+              attrs="{'invisible': [('state', 'in', ['posted', 'done'])]}"/>
+            <button name="action_done"
+              string="Done"
+              class="oe_highlight"
+              type="object"
+              attrs="{'invisible': [('state', 'in', ['done', 'draft'])]}"/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,posted"/>
+          </header>
+          <sheet>
+            <div>
+              <span class="o_form_label">
+                <field name="type" attrs="{'invisible': [('state', '=', 'draft')]}" readonly="1" nolabel="1"/>
+              </span>
+              <h1>
+                <span attrs="{'invisible': [('state', '!=', 'draft')]}">Apartment</span>
+              </h1>
+              <h1 class="mt0">
+                <field name="name" attrs="{'invisible': [('name', '=', '/')]}"/>
+                <field name="reference"/>
+              </h1>
+            </div>
+            <group>
+              <group id="header_left_group">
+                <field name="type" invisible="True"/>
+                <field name="street"/>
+                <field name="l10n_pe_district"/>
+                <field name="city_id"/>
+                <field name="country_id"/>
+              </group>
+              <group id="header_right_group">
+                <field name="date"/>
+                <field name="journal_id"/>
+              </group>
+            </group>
+            <notebook>
+              <page id="service_tab" string="Servicios">
+                <field name="service_ids">
+                  <tree editable="bottom" default_order="sequence">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                  </tree>
+                </field>
+                </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_home_apartment_calendar" model="ir.ui.view">
+      <field name="name">home.apartment.calendar</field>
+      <field name="model">home.apartment</field>
+      <field name="arch" type="xml">
+        <calendar date_start="date" color="state">
+          <field name="name"/> 
+        </calendar>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_home_apartment_graph">
+      <field name="name">home.apartment.graph</field>
+      <field name="model">home.apartment</field>
+      <field name="arch" type="xml">
+          <graph>
+              <field name="journal_id"/>
+              <field name="count_service" type="measure"/>
+          </graph>
+      </field>
+    </record>
+
+    <!--service.apartment-->
+    <record model="ir.ui.view" id="view_service_apartment_tree">
+      <field name="name">service.apartment.tree</field>
+      <field name="model">service.apartment</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="apartment_ids" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- ACTIONS -->
+
+    <!-- home.apartment -->
+    <record id="action_sale_apartment" model="ir.actions.act_window">
+      <field name="name">Sale</field>
+      <field name="res_model">home.apartment</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
+      <field name="context">{'default_type': 'sale'}</field>
+      <field name="domain">[('type', '=', 'sale')]</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create an Apartment
+        </p>
+      </field>
+    </record>
+
+    <record id="action_rental_apartment" model="ir.actions.act_window">
+      <field name="name">Rental</field>
+      <field name="res_model">home.apartment</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
+      <field name="context">{'default_type': 'rental'}</field>
+      <field name="domain">[('type', '=', 'rental')]</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create an Apartment
+        </p>
+      </field>
+    </record>
+
+    <record id="action_service_apartment" model="ir.actions.act_window">
+      <field name="name">Service</field>
+      <field name="res_model">service.apartment</field>
+    </record>
+
+    <!-- MENUS -->
+    <menuitem
+      id="menu_action_sale_apartment"
+      action="action_sale_apartment"
+      parent="menu_rental_apartments"
+      sequence="1"/>
+
+    <menuitem
+      id="menu_action_rental_apartment"
+      action="action_rental_apartment"
+      parent="menu_rental_apartments"
+      sequence="1"/>
+
+    <menuitem
+      id="menu_action_service_apartment"
+      action="action_service_apartment"
+      parent="menu_rental_apartments"
+      sequence="1"/>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="rental_aparment.action_server">
+      <field name="name">rental_aparment server</field>
+      <field name="model_id" ref="model_rental_aparment_rental_aparment"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+  </data>
+</odoo>

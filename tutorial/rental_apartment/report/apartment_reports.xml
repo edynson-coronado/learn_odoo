@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <report
+            id="report_home_apartment"
+            string="Apartment Home"
+            model="home.apartment"
+            report_type="qweb-pdf"
+            name="rental_apartment.report_home_apartment"
+            file="rental_apartment.report_home_apartment"
+        />
+
+    </data>
+</odoo>

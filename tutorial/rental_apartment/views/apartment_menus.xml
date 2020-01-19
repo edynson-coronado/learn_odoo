@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Apartment"
+            id="menu_rental"/>
+
+        <menuitem id="menu_rental_apartments" name="Apartments" parent="menu_rental" sequence="1"/>
+
+    </data>
+</odoo>

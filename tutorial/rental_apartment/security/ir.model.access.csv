@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rental_apartment_home_apartment,home.apartment,model_home_apartment,base.group_user,1,1,1,1
+access_rental_apartment_service_apartment,service.apartment,model_service_apartment,base.group_user,1,1,1,1
