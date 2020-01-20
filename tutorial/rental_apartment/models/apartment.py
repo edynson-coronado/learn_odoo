@@ -4,6 +4,7 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
+"""
 class HomeApartment(models.Model):
     _name = 'home.apartment'
 
@@ -113,8 +114,9 @@ class HomeApartment(models.Model):
                 obj.country_id and '-' + obj.country_id.name or ''
             )
             obj.reference = reference
+"""
 
-
+"""
 class ServiceApartment(models.Model):
     _name = 'service.apartment'
 
@@ -132,3 +134,4 @@ class ServiceApartment(models.Model):
     _sql_constraints = [
         ('name_uniq', 'unique(name)', 'Tag name already exists!'),
     ]
+"""

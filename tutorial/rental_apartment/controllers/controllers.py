@@ -3,6 +3,7 @@ from odoo import http
 from odoo.http import request
 
 
+"""
 class RentalApartment(http.Controller):
 
     @http.route('/rental_apartment/hello_world', auth='public')
@@ -14,3 +15,4 @@ class RentalApartment(http.Controller):
         print(apartment_id, type(apartment_id))
         obj = request.env['home.apartment'].sudo().browse(apartment_id)
         return obj.name
+"""
