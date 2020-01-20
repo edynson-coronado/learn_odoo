@@ -103,3 +103,14 @@ my_module
 **6. Campos booleanos: “customer” y “supplier” quitados, reemplazados por campos ranqueados.**
 
 **7. Campo “image” reemplazado por “image_1920”**
+
+## Novedades
+**1. Website_forum - perfil de usuario**
+
+**2. Agregar videos al ecomerce - carrusel**
+
+**3. Vista mapa en res.partner**
+
+**4. Carga de js con lazy loading**
+
+**5. jQuery v3**
