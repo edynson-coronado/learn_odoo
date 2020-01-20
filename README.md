@@ -120,6 +120,14 @@ $ odoo -c odoo-server-comunity.conf -d <db_name> -u <module_name> --test-enable 
 
 **3. Vista mapa en res.partner**
 
+<img src="https://raw.githubusercontent.com/edynsoncoronado/learn_odoo/master/src/images/maps.png" alt="maps" width="500"/>
+
 **4. Carga de js con lazy loading**
 
+https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video?hl=es
+
 **5. jQuery v3**
+```
+console.debug("jQuery "+ (jQuery ? $().jquery : "NOT") +" loaded")
+```
+<img src="https://raw.githubusercontent.com/edynsoncoronado/learn_odoo/master/src/images/jquery-odoo.png" alt="jquery" width="500"/>
