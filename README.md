@@ -27,7 +27,7 @@ my_module
 ├── __manifest__.py
 ├── controllers
 │   ├── __init__.py
-│   └── <module_name>.py
+│   ├── <module_name>.py
 |   └── <inherited_module_name>.py
 ├── models
 │   ├── __init__.py
@@ -36,21 +36,70 @@ my_module
 │   └── inherit_model.py
 ├── report
 │   ├── __init__.py
-│   └── <model>_report.py            (statistics reports with python)
-│   └── <model>_views.xml            (statistics reports SQL views)
-│   └── <model>_reports.xml          (printable reports: report actions, paperformat, ...)
+│   ├── <model>_report.py            (statistics reports with python)
+│   ├── <model>_views.xml            (statistics reports SQL views)
+│   ├── <model>_reports.xml          (printable reports: report actions, paperformat, ...)
 │   └── <model>_templates.xml        (printable reports: xml report templates)
 ├── data
 │   ├── __init__.py
-│   └── <model>_data.xml
+│   ├── <model>_data.xml
 │   └── <model>_demo.xml
 ├── views
-│   ├── __init__.py
-│   └── <module_name>_menus.xml     (optional definition of main menus)
-│   └── <model>_templates.xml       (import of JS / CSS)
-│   └── <model>_views.xml           (backend views)
+│   ├── <module_name>_menus.xml     (optional definition of main menus)
+│   ├── <model>_templates.xml       (import of JS / CSS)
+│   ├── <model>_views.xml           (backend views)
 │   └── assets.xml                  (portal templates)
-├── security
-│   └── ir.model.access.csv
-│   └── <model>_security.xml
+└── security
+    ├── ir.model.access.csv
+    └── <model>_security.xml
 ```
+**3. Scaffolding**
+
+**4. Manifest**
+
+**5. Models**
+
+**6. Compute fields**
+
+**7. Inheritance**
+
+**8. Onchange**
+
+**9. Constrains**
+
+**10. Actions**
+
+**11. Menus**
+
+**12. Tree views**
+
+**13. Form views**
+
+**14. Search views**
+
+**15. Calendar**
+
+**16. Graph**
+
+**17. Report**
+
+**18. Controllers**
+
+**19. Security**
+
+**20. Tests**
+
+## Cambios
+**1. Modo desarrollador permanente**
+
+**2. Bye api.one, api.multi**
+
+**3. Bye account.invoice**
+
+**4. View_type -> view_mode**
+
+**5. Ocultar y mostrar campos en vista tree**
+
+**6. Campos booleanos: “customer” y “supplier” quitados, reemplazados por campos ranqueados.**
+
+**7. Campo “image” reemplazado por “image_1920”**
