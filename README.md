@@ -20,7 +20,6 @@ $ odoo -c odoo-server-comunity.conf -d <db_name> -u all
 ```
 
 **2. Estructura del módulo**
-- https://www.odoo.com/documentation/13.0/reference/guidelines.html#module-structure
 ```
 my_module
 ├── __init__.py
@@ -53,7 +52,14 @@ my_module
     ├── ir.model.access.csv
     └── <model>_security.xml
 ```
+- https://www.odoo.com/documentation/13.0/reference/guidelines.html#module-structure
+
 **3. Scaffolding**
+- No modificar los módulos de odoo.
+- Crear un directorio para agregar módulos de terceros y propios.
+```bash
+$ odoo scaffold <module_name>
+```
 
 **4. Manifest**
 
@@ -88,6 +94,9 @@ my_module
 **19. Security**
 
 **20. Tests**
+```bash
+$ odoo -c odoo-server-comunity.conf -d <db_name> -u <module_name> --test-enable --log-level=test
+```
 
 ## Cambios
 **1. Modo desarrollador permanente**
