@@ -16,12 +16,12 @@
         'l10n_pe'
     ],
     'data': [
-        'security/ir.model.access.csv',
-        'views/journal_views.xml',
-        'views/apartment_menus.xml',
-        'views/apartment_views.xml',
-        'report/apartment_reports.xml',
-        'report/apartment_report_template.xml'
+        # 'security/ir.model.access.csv',
+        # 'views/journal_views.xml',
+        # 'views/apartment_menus.xml',
+        # 'views/apartment_views.xml',
+        # 'report/apartment_reports.xml',
+        # 'report/apartment_report_template.xml'
     ],
     'application': True
 }
