@@ -62,6 +62,7 @@ $ odoo scaffold <module_name>
 ```
 
 **4. Manifest**
+- https://www.odoo.com/documentation/13.0/reference/module.html
 
 **5. Models**
 
@@ -124,7 +125,7 @@ $ odoo -c odoo-server-comunity.conf -d <db_name> -u <module_name> --test-enable 
 
 **4. Carga de js con lazy loading**
 
-https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video?hl=es
+- https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video?hl=es
 
 **5. jQuery v3**
 ```
