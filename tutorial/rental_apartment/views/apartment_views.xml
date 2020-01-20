@@ -162,21 +162,5 @@
       parent="menu_rental_apartments"
       sequence="1"/>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="rental_aparment.action_server">
-      <field name="name">rental_aparment server</field>
-      <field name="model_id" ref="model_rental_aparment_rental_aparment"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
   </data>
 </odoo>
