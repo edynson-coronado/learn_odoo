@@ -132,13 +132,3 @@ class ServiceApartment(models.Model):
     _sql_constraints = [
         ('name_uniq', 'unique(name)', 'Tag name already exists!'),
     ]
-
-"""
-class TypeApartment(models.Model):
-    _name = 'type.apartment'
-
-    name = fields.Char(
-        string='Tipo',
-        required=True
-    )
-"""
