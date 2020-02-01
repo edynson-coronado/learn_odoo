@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db_postgres10odoo13:
+    image: postgres:10.0
+    env_file: .env
+    volumes:
+      - vol_postgres10odoo13:/var/lib/postgresql/data
+    ports:
+      - "1357:5432"
+
+volumes:
+  vol_postgres10odoo13:
